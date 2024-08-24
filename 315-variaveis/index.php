@@ -4,7 +4,7 @@
 
   <meta charset="UTF-8">
 
-  <title>PHP - </title>
+  <title>PHP - Variáveis</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -39,6 +39,14 @@
   <!-- Script PHP -->
   <?php include 'script.php'; ?>
 
+  <h1>Ficha cadastral</h1>
+
+  <br>
+
+  <p>Nome: <?= $nome ?></p>
+  <p>Idade: <?= $idade ?></p>
+  <p>Peso: <?= $peso ?></p>
+  <p>Fumante: <?= $fumante_sn ?></p>
 
 
 
