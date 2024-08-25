@@ -4,7 +4,7 @@
 
   <meta charset="UTF-8">
 
-  <title>PHP - </title>
+  <title>PHP - If/Else - Praticando com operadores de comparação</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
