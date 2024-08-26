@@ -4,7 +4,7 @@
 
   <meta charset="UTF-8">
 
-  <title>PHP - </title>
+  <title>PHP - Operadores ternários</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -39,32 +39,72 @@
   <!-- Script PHP -->
   <?php include 'script.php'; ?>
 
+  <h1>Detalhes do pedido</h1>
 
+  <p>
+    
+    Possui cartão da loja?
+    
+    <?= $usuario_possui_cartao_loja ? 'SIM' : 'NÃO'; ?>
+  
+    <?php
 
+    // <condição> ? true : false
 
+    /*
+    if ($usuario_possui_cartao_loja) {
 
+      echo 'SIM';
 
+    } else {
 
+      echo 'NÂO';
 
+    }
+    */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
+    
+    ?>
+  
+  </p>
 
   
+
+  <p>
+    Valor da compra: <?= $valor_compra ?>
+  </p>
+
+  <p>
+    
+    Recebeu desconto no frete?
+  
+    <?= $recebeu_desconto_frete ? 'SIM' : 'NÃO'; ?>
+
+  </p>
+
+  <p>
+    Valor do frete: <?= $valor_frete ?>
+  </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </body>	
