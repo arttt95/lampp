@@ -4,7 +4,7 @@
 
   <meta charset="UTF-8">
 
-  <title>PHP - </title>
+  <title>PHP - Atividade para fixação do conteúdo</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
