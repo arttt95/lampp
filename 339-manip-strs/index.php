@@ -4,7 +4,7 @@
 
   <meta charset="UTF-8">
 
-  <title>PHP - </title>
+  <title>PHP - Funções nativas para manipular strings</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
