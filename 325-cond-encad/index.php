@@ -4,7 +4,7 @@
 
   <meta charset="UTF-8">
 
-  <title>PHP - </title>
+  <title>PHP - If/Else (praticando um pouco mais)</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -39,7 +39,57 @@
   <!-- Script PHP -->
   <?php include 'script.php'; ?>
 
+  <h1>Detalhes do pedido</h1>
 
+  <p>
+    
+    Possui cartão da loja?
+  
+    <?php
+
+    if ($usuario_possui_cartao_loja) {
+
+      echo 'SIM';
+
+    } else {
+
+      echo 'NÂO';
+
+    }
+    
+    ?>
+  
+  </p>
+
+  
+
+  <p>
+    Valor da compra: <?= $valor_compra ?>
+  </p>
+
+  <p>
+    
+    Recebeu desconto no frete?
+  
+    <?php
+
+    if ($recebeu_desconto_frete) {
+
+      echo 'SIM';
+
+    } else {
+
+      echo 'NÂO';
+
+    }
+    
+    ?>
+  
+  </p>
+
+  <p>
+    Valor do frete: <?= $valor_frete ?>
+  </p>
 
 
 
