@@ -1,3 +1,17 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] != 'SIM') {
+
+  header('Location: index.php?login=erro2');
+  
+}
+
+echo $_SESSION['autenticado'];
+
+?>
+
 <html>
   <head>
     <meta charset="utf-8" />
@@ -18,7 +32,7 @@
 
     <nav class="navbar navbar-dark bg-dark">
       <a class="navbar-brand" href="#">
-        <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        <img src="imgs/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         App Help Desk
       </a>
     </nav>
