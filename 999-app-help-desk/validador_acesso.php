@@ -8,6 +8,6 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] != 'SIM') {
   
 }
 
-echo $_SESSION['autenticado'];
+// echo $_SESSION['autenticado'];
 
 ?>
