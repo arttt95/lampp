@@ -1,15 +1,12 @@
 <?php
 
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
-
+session_start();
 
 $titulo = str_replace('#', '-', $_POST['titulo']);
 $categoria = str_replace('#', '-', $_POST['categoria']);
 $descricao = str_replace('#', '-', $_POST['descricao']);
 
-$texto = implode("#", [$titulo, $categoria, $descricao]) . PHP_EOL;
+$texto = implode("#", [$_SESSION['id'], $titulo, $categoria, $descricao]) . PHP_EOL;
 
 //echo $texto;
 
