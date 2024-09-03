@@ -2,7 +2,27 @@
 
 require_once("validador_acesso.php");
 
+// chamados
+$chamados = [];
+
+// Abrir o 'arquivo.txt'
+$arquivo = fopen('arquivo.txt','r');
+
+// Percorrer o 'arquivo.txt' enquanto houver registros (linhas) a serem recuperadas
+while (!feof($arquivo)) { // A função feof() testa um arquivo até que chegue ao final
+
+  //linhas
+  $registro = fgets($arquivo);
+  $chamados[] = $registro;
+
+}
+
+// Fechar o arquivo aberto
+fclose($arquivo);
+
+
 ?>
+
 
 <html>
   <head>
@@ -45,23 +65,44 @@ require_once("validador_acesso.php");
             
             <div class="card-body">
               
-              <div class="card mb-3 bg-light">
-                <div class="card-body">
-                  <h5 class="card-title">Título do chamado...</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-                  <p class="card-text">Descrição do chamado...</p>
+              <?php
 
-                </div>
-              </div>
+                foreach ($chamados as $chamado) {
 
-              <div class="card mb-3 bg-light">
-                <div class="card-body">
-                  <h5 class="card-title">Título do chamado...</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-                  <p class="card-text">Descrição do chamado...</p>
+                  ?>
 
-                </div>
-              </div>
+                  <?php
+
+                    // Transformando cada string recebida na variável '$chamado' em um array com 3 strings divididas pelo '#'
+                    $chamado_dados = explode('#', $chamado);
+
+                    if (count($chamado_dados) < 3) {
+                      
+                      continue;
+
+                    }
+
+                    // => Debug: Testando o retorno do array '$chamado_dados'
+                    //echo '<pre>';
+                    //print_r($chamado_dados);
+                    //echo '</pre>';
+
+                  ?>
+
+                  <div class="card mb-3 bg-light">
+                    <div class="card-body">
+                      <h5 class="card-title"><?= $chamado_dados[0]  ?></h5>
+                      <h6 class="card-subtitle mb-2 text-muted"><?= $chamado_dados[1]  ?></h6>
+                      <p class="card-text"><?= $chamado_dados[2]  ?></p>
+
+                    </div>
+                  </div>
+              
+              <?php
+
+                }
+
+              ?>
 
               <div class="row mt-5">
                 <div class="col-6">
