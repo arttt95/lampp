@@ -10,12 +10,23 @@ $texto = implode("#", [$_SESSION['id'], $titulo, $categoria, $descricao]) . PHP_
 
 //echo $texto;
 
-$arquivo = fopen('arquivo.txt', 'a');
+$elementos = explode('#', $trxto);
 
-fwrite($arquivo, $texto);
+if (count($elementos) === 4) {
 
-fclose($arquivo);
+    $arquivo = fopen('arquivo.txt', 'a');
 
-header('Location: abrir_chamado.php')
+    fwrite($arquivo, $texto);
+
+    fclose($arquivo);
+
+} else {
+
+    header('Location: abrir_chamado.php');
+
+}
+
+header('Location: abrir_chamado.php?status=insertion_error&message=Voc%C3%AA%20deve%20preencher%20todos%20os%20campos%20para%20inserir%20um%20chamado%21
+');
 
 ?>

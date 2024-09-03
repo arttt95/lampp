@@ -13,7 +13,31 @@ while (!feof($arquivo)) { // A função feof() testa um arquivo até que chegue 
 
   //linhas
   $registro = fgets($arquivo);
-  $chamados[] = $registro;
+
+  $registro_detalhes = explode('#', $registro);
+
+  // Debug: => Verifica o retorno de cada Arr $registro_detalhes
+  //echo '<pre>';
+  //print_r($registro_detalhes);
+  //echo '</pre>';
+
+  if ($_SESSION['perfil_id'] != 1) {
+
+      if ($_SESSION['id'] != $registro_detalhes[0]) {
+
+          continue;
+
+      } else {
+
+        $chamados[] = $registro;
+
+      }
+
+  } else {
+
+    $chamados[] = $registro;
+
+  }
 
 }
 
@@ -67,37 +91,20 @@ fclose($arquivo);
               
               <?php
 
-                foreach ($chamados as $chamado) {
+                foreach ($chamados as $chamado) { ?>
 
-                  ?>
+                <?php
 
-                  <?php
+                  $chamado_dados = explode('#', $chamado);
 
-                    // Transformando cada string recebida na variável '$chamado' em um array com 3 strings divididas pelo '#'
-                    $chamado_dados = explode('#', $chamado);
+                  // Verificando se a Arr $chamado_dados está com o número de elementos necessários (4)
+                  if (count($chamado_dados) < 3) {
 
-                    if (count($chamado_dados) < 3) {
-                      
-                      continue;
+                    continue;
 
-                    }
+                  }
 
-                    // => Debug: Testando o retorno do array '$chamado_dados'
-                    //echo '<pre>';
-                    //print_r($chamado_dados);
-                    //echo '</pre>';
-
-                    if ($_SESSION['perfil_id'] != 1) {
-
-                      if ($_SESSION['id'] != $chamado_dados[0]) {
-
-                        continue;
-
-                      }
-
-                    }
-
-                  ?>
+                ?>
 
                   <div class="card mb-3 bg-light">
                     <div class="card-body">

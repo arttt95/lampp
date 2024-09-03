@@ -2,6 +2,11 @@
 
 require_once("validador_acesso.php");
 
+if (isset($_GET['status']) && $_GET['status'] == 'insertion_error') {
+  $message = htmlspecialchars($_GET['message']); // Sanitiza a mensagem para evitar XSS
+  echo "<script>alert('Erro: $message');</script>";
+}
+
 ?>
 
 <html>
