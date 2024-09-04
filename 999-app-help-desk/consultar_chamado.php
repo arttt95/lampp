@@ -6,7 +6,7 @@ require_once("validador_acesso.php");
 $chamados = [];
 
 // Abrir o 'arquivo.txt'
-$arquivo = fopen('arquivo.txt','r');
+$arquivo = fopen('../../app_help_desk/arquivo.txt','r');
 
 // Percorrer o 'arquivo.txt' enquanto houver registros (linhas) a serem recuperadas
 while (!feof($arquivo)) { // A função feof() testa um arquivo até que chegue ao final
