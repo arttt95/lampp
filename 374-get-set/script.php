@@ -89,4 +89,78 @@ $x->setNumFilhos(2);
 $x->setTelefone('21 88888-8888');
 echo $x->resumirCadFunc();
 
+/*
+class Profissao {
+
+    public $cargo = null;
+    public $salario = null;
+    public $cargaHoraria = null;
+
+    //////////////////////
+    //      Setters     //
+    //////////////////////
+
+    function setCargo ($cargo) {
+
+        $this->cargo = $cargo;
+
+    }
+
+    function setSalario ($salario) {
+
+        $this->salario = $salario;
+
+    }
+
+    function setCargaHoraria ($cargaHoraria) {
+
+        $this->cargaHoraria = $cargaHoraria;
+
+    }
+
+    //////////////////////
+    //      Getters     //
+    //////////////////////
+
+    function getCargo () {
+
+        return $this->cargo;
+    }
+
+    function getSalario () {
+
+        return $this->salario;
+    }
+
+    function getCargaHoraria () {
+
+        return $this->cargaHoraria;
+    }
+
+    //////////////////////
+    //      Methods     //
+    //////////////////////
+
+    function alterarSalario ($salario) {
+        
+        $this->salario = $salario;
+
+    }
+
+    function resumirProfissao () {
+
+        return 'Pessoas que trabalham com ' . $this->getCargo() . ' normalmente recebem ' . $this->getSalario() . ' e a jornada semanal é de ' . $this->getCargaHoraria(). ' horas semanais!';
+    }
+
+}
+
+$x = new Profissao();
+
+$x->setCargo('Marcenaria');
+$x->setSalario(2300);
+$x->setCargaHoraria(40);
+
+echo $x->resumirProfissao();
+*/
+
 ?>
