@@ -27,7 +27,7 @@ class Pai {
         }
     }
     */
-
+    
     public function __set($attr, $valor) {
         if(strlen($attr >= 3)) {
             $this->$attr = $valor;
@@ -62,6 +62,49 @@ class Pai {
 
 }
 
+class Filho extends Pai {
+
+    /*
+    public function getAtributo($attr) {
+        return $this->$attr;
+    }
+
+    public function setAtributo($attr, $valor) {
+        $this->$attr = $valor;
+    }
+    */
+    
+    /*
+    public function __set($attr, $valor) {
+        $this->$attr = $valor;
+    }
+
+    public function __get($attr) {
+        return $this->$attr;
+    }*/
+
+    public function __construct() {
+        // Exibir os métodos herdados da class Pai
+        echo '<pre style="color: #ff79c6">';
+        print_r(get_class_methods($this));
+        echo '</pre>';
+    }
+
+    private function executarMania() {
+        echo 'Cantar';
+    }
+
+    public function x() {
+        $this->executarMania();
+    }
+
+    public function responder() {
+        echo 'Tchau';
+    }
+
+}
+
+/*
 $pai = new Pai();
 
 echo $pai->nome;
@@ -95,5 +138,23 @@ echo '<hr style="background: cyan; color: cyan; height: 2px;">';
 ////////////////////////////////////////////////////////////////
 
 echo $pai->executarAcaoAleatoria();
+*/
+
+$filho = new Filho();
+
+// Exibir atributos herdados da class Pai
+echo '<pre style="color: #ff79c6">';
+print_r($filho);
+echo '</pre>';
+
+$filho->executarAcao('executarMania');
+
+echo '<br>';
+
+$filho->x();
+
+echo '<br>';
+
+$filho->responder();
 
 ?>
