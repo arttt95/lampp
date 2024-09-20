@@ -74,12 +74,12 @@ $mensagem->__set('para', $_POST['para']);
 $mensagem->__set('assunto', $_POST['assunto']);
 $mensagem->__set('mensagem', $_POST['mensagem']);
 
+
+/////////////
+//echo '<hr>';
+/////////////
+
 /*
-/////////////
-echo '<hr>';
-/////////////
-
-
 echo '<pre>';
 print_r($mensagem);
 echo '</pre>';
@@ -105,7 +105,7 @@ try {
 
     //Recipients
     $mail->setFrom('webdevopscompleto@gmail.com', 'Web Devops Remetente');
-    $mail->addAddress('thuurdamasceno@gmail.com', 'Web Devops Destinatário');     //Add a recipient
+    $mail->addAddress($mensagem->__get('para'));     //Add a recipient
     //$mail->addReplyTo('info@example.com', 'Information');
     //$mail->addCC('cc@example.com');
     //$mail->addBCC('bcc@example.com');
@@ -116,15 +116,16 @@ try {
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Oi. Eu sou o assunto!';
-    $mail->Body    = 'Oi. Eu sou o conteúdo do <strong>email</strong>!';
-    $mail->AltBody = 'Oi. Eu sou o conteúdo do email!';
+    $mail->Subject = $mensagem->__get('assunto');
+    $mail->Body    = $mensagem->__get('mensagem');
+    $mail->AltBody = 'É necessário utilizar um client que suporte HTML para ter acesso total ao conteúdo dessa mensagem!';
 
     $mail->send();
-    echo 'Message has been sent';
+    echo 'E-mail enviado com sucesso!';
 
 } catch (Exception $e) {
     echo "Não foi possível enviar este email. Por favor, tente novamente mais tarde! Detalhes do erro: {$mail->ErrorInfo}";
 }
+
 
 ?>
