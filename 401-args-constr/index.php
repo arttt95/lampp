@@ -4,7 +4,7 @@
 
   <meta charset="UTF-8">
 
-  <title>PHP 8 - </title>
+  <title>PHP 8 - Combinando as features de 'Argumentos' com 'Propriedade de Construtor'</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
