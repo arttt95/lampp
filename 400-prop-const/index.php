@@ -4,7 +4,7 @@
 
   <meta charset="UTF-8">
 
-  <title>PHP8 - </title>
+  <title>PHP - PHP 8 (Promoção de propriedade de construtor)</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
