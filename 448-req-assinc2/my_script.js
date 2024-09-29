@@ -1,5 +1,5 @@
 function requisitarPagina(url) {
-
+    
     let ajax = new XMLHttpRequest();
 
     // Requisição não iniciada, state = 0
