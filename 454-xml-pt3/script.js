@@ -20,7 +20,7 @@ function getFilmes() {
 
             console.log(jsonFilmes);
 
-            console.log('Yeah buddy!')
+            console.log('Yeah buddy!');
 
         }
 
