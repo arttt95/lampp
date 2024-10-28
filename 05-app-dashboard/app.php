@@ -109,8 +109,14 @@ class Db {
 $dashboard = new Dashboard();
 $conexao = new Conexao();
 
-$dashboard->__set('data_inicio', '2024-10-01');
-$dashboard->__set('data_fim', '2024-10-31');
+$competencia = explode('-', $_GET['competencia']);
+$ano = $competencia[0];
+$mes = $competencia[1];
+
+$dias_do_mes = cal_days_in_month(CAL_GREGORIAN, $mes, $ano);
+
+$dashboard->__set('data_inicio', $ano . '-' . $mes . '-01');
+$dashboard->__set('data_fim', $ano . '-' . $mes . '-' . $dias_do_mes);
 
 
 $db = new Db($conexao, $dashboard);
@@ -118,14 +124,16 @@ $db = new Db($conexao, $dashboard);
 $dashboard->__set('numeroVendas', $db->getNumeroVendas());
 $dashboard->__set('totalVendas', $db->getTotalVendas());
 
-
-echo '<pre>';
-print_r($dashboard);
-echo '</pre>';
-
+/*
 echo '<pre>';
 print_r($db->getTotalVendas());
 echo '</pre>';
 
+echo '<pre>';
+print_r($dashboard);
+echo '</pre>';
+*/
+
+echo json_encode($dashboard);
 
 ?>
