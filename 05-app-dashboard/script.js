@@ -46,6 +46,7 @@ $(document).ready(() => {
             success: dados => {
                 $('#numeroVendas').html(dados.numeroVendas);
                 $('#totalVendas').html(dados.totalVendas);
+                $('#clientesAtivos').html(dados.clientes_ativos);
             },
             error: erro => {console.log('Erro!')}
             
